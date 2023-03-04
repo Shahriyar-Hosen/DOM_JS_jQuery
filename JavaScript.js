@@ -54,3 +54,20 @@ oldElement.parentNode.replaceChild(newElement, oldElement);
 let elementToRemove = document.getElementById("my-element");
 
 elementToRemove.parentNode.removeChild(elementToRemove);
+
+/* 
+   3. Add/modify/remove built-in attributes:
+
+    To add or modify built-in HTML attributes using JavaScript, you can use the setAttribute, getAttribute, and removeAttribute methods. Example: ⬇️⬇️⬇️
+*/
+
+// Adding a built-in attribute
+document.getElementById("my-element").setAttribute("class", "new-class");
+
+// Modifying a built-in attribute
+document
+  .getElementById("my-element")
+  .setAttribute("class", "old-class new-class");
+
+// Removing a built-in attribute
+document.getElementById("my-element").removeAttribute("class");
