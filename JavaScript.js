@@ -98,3 +98,48 @@ delete myElement.dataset.myAttribute;
 /* 
     To be more clear : link--> https://youtu.be/7Q6VPgouqzk
 */
+
+/* 
+    5. API request with AJAX:
+
+   After making an API request with AJAX using JavaScript, you can add, modify, or remove HTML markup, text content, and attributes value from the API response using the following methods. Example: ⬇️⬇️⬇️
+    
+*/
+
+// After receiving the API response,
+let data = {
+  title: "Example",
+  content: "<p>Example content</p>",
+  image: "example.jpg",
+};
+
+// Using XMLHttpRequest
+var request = new XMLHttpRequest();
+request.open("GET", "https://api.example.com/data");
+request.onload = function () {
+  if (request.status >= 200 && request.status < 400) {
+    var data = JSON.parse(request.responseText);
+    // Add/modify/remove HTML markup, text content, and attributes value from the API response
+  } else {
+    console.error("API request error:", request.status);
+  }
+};
+request.onerror = function () {
+  console.error("API request error:", request.status);
+};
+request.send();
+
+// Using fetch
+fetch("https://api.example.com/data")
+  .then(function (response) {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error("API request error");
+  })
+  .then(function (data) {
+    // Add/modify/remove HTML markup, text content, and attributes value from the API response
+  })
+  .catch(function (error) {
+    console.error("API request error:", error);
+  });
