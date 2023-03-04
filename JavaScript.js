@@ -71,3 +71,30 @@ document
 
 // Removing a built-in attribute
 document.getElementById("my-element").removeAttribute("class");
+
+/* 
+   4. Add/modify/remove custom attributes:
+
+    To add or modify custom HTML attributes using JavaScript, you can use the getAttribute || setAttribute || dataset property. Example: ⬇️⬇️⬇️
+*/
+
+let myElement = document.getElementById("my-element");
+
+// Adding a custom attribute
+
+myElement.getAttribute("class"); // Attribute name and return value
+
+myElement.dataset.myAttribute = "my-value"; // dataset
+
+// Modifying a custom attribute
+
+myElement.setAttribute("class", "bg-red"); // 1 is attribute name and 2 is new value
+
+myElement.dataset.myAttribute = "new-value"; // dataset
+
+// Removing a custom attribute
+delete myElement.dataset.myAttribute;
+
+/* 
+    To be more clear : link--> https://youtu.be/7Q6VPgouqzk
+*/
